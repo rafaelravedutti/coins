@@ -1,19 +1,19 @@
-balanca1([X1, X2, X3, X4, Y1, Y2, Y3, Y4 | T], menor) :-
+balanca1([X1, X2, X3, X4, Y1, Y2, Y3, Y4 | _], menor) :-
   X1 + X2 + X3 + X4 < Y1 + Y2 + Y3 + Y4.
 
-balanca1([X1, X2, X3, X4, Y1, Y2, Y3, Y4 | T], maior) :-
+balanca1([X1, X2, X3, X4, Y1, Y2, Y3, Y4 | _], maior) :-
   X1 + X2 + X3 + X4 > Y1 + Y2 + Y3 + Y4.
 
-balanca1([X1, X2, X3, X4, Y1, Y2, Y3, Y4 | T], igual) :-
+balanca1([X1, X2, X3, X4, Y1, Y2, Y3, Y4 | _], igual) :-
   X1 + X2 + X3 + X4 =:= Y1 + Y2 + Y3 + Y4.
 
-balanca2([X1, X2, X3, X4, Y1, Y2, Y3, Y4, Z1, Z2, Z3, Z4], menor) :-
+balanca2([X1, X2, X3, X4, Y1, _, _, _, Z1, Z2, Z3, _], menor) :-
   X1 + X2 + X3 + Y1 < X4 + Z1 + Z2 + Z3.
 
-balanca2([X1, X2, X3, X4, Y1, Y2, Y3, Y4, Z1, Z2, Z3, Z4], maior) :-
+balanca2([X1, X2, X3, X4, Y1, _, _, _, Z1, Z2, Z3, _], maior) :-
   X1 + X2 + X3 + Y1 > X4 + Z1 + Z2 + Z3.
 
-balanca2([X1, X2, X3, X4, Y1, Y2, Y3, Y4, Z1, Z2, Z3, Z4], igual) :-
+balanca2([X1, X2, X3, X4, Y1, _, _, _, Z1, Z2, Z3, _], igual) :-
   X1 + X2 + X3 + Y1 =:= X4 + Z1 + Z2 + Z3.
 
 balanca3([X1, X2, X3, X4, Y1, Y2, Y3, Y4, Z1, Z2, Z3, Z4], menor) :-
